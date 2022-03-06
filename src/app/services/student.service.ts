@@ -7,6 +7,9 @@ export interface Student {
   name: string;
   email: string;
   username: string;
+  phone: string;
+  website: string;
+  address: string;
 }
 
 @Injectable({

@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './components/students/students.component';
 import {HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,13 @@
-<section>
-  <table>
-    <thead>
-    <tr>
-      <th>No #</th>
-      <th>Name and surname</th>
-      <th>E-mail address</th>
-      <th>Username</th>
-      <th>Actions</th>
-      <th>Test click event in console</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let student of students">
-      <td>{{student.id}}</td>
-      <td>{{student.name}}</td>
-      <td><a href="mailto:john@smith.com">{{student.email}}</a></td>
-      <td>{{student.username}}</td>
-      <td>
-        <a href="#" class="button button-green">Edit</a>
-        <button class="button button-red">Delete</button>
-      </td>
-      <td><button class="button button-blue" (click)="onClick()">Click to see the message</button></td>
-    </tr>
-    </tbody>
-  </table>
-</section>
+<header class="container">
+  <h1>
+    {{ title }}
+  </h1>
+</header>
 
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="container">
+  Copyright &copy; 2020 by SDA.
+</footer>

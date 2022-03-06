@@ -1,1 +1,37 @@
-<p>students works!</p>
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>No #</th>
+      <th>Name and surname</th>
+      <th>E-mail address</th>
+      <th>Username</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Address</th>
+      <th>Actions</th>
+      <th>Test click event in console</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td><a href="mailto:john@smith.com">{{student.email}}</a></td>
+      <td>{{student.username}}</td>
+      <td>{{student.phone}}</td>
+      <td>{{student.website}}</td>
+      <td>{{student.address}}</td>
+      <td>
+        <a href="#" class="button button-green">Edit</a>
+        <button class="button button-red">Delete</button>
+      </td>
+      <td>
+        <button class="button button-blue" (click)="onClick()">Click to see the message</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p *ngIf="show">The user is deleted</p>
+</section>
+
