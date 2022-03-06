@@ -10,6 +10,7 @@ import {Student, StudentService} from "./services/student.service";
 export class AppComponent implements OnInit {
   title = 'student-app';
   students: Student[] = [];
+  status: string = "";
 
   constructor(public studentsService: StudentService) {
   }
@@ -17,5 +18,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.studentsService.getStudents().subscribe(
       response => this.students = response);
+  }
+
+  onClick() {
+    console.log("You deleted the user");
   }
 }

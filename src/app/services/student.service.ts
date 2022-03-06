@@ -13,6 +13,7 @@ export interface Student {
   providedIn: 'root'
 })
 export class StudentService {
+  private status: any;
 
   constructor(private http: HttpClient) {
   }
@@ -25,11 +26,14 @@ export class StudentService {
     return this.http.get<Student>('https://jsonplaceholder.typicode.com/posts/${id}');
   }
 
-  postStudent(id: number): Observable<Student> {
-    return this.http.get<Student>('https://jsonplaceholder.typicode.com/posts/${id}');
-  }
+  // postStudent(id: number): Observable<Student> {
+  //   return this.http.post<Student>('https://jsonplaceholder.typicode.com/posts/');
+  // }
 
+  // @ts-ignore
   deleteStudent(id: number): Observable<Student> {
-    return this.http.delete<Student>('https://jsonplaceholder.typicode.com/posts/${id}');
+    const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
+    this.http.delete<Student>('https://jsonplaceholder.typicode.com/posts/${id}', { headers })
+      .subscribe(() => this.status = 'Delete successful');
   }
 }

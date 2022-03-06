@@ -20,11 +20,13 @@ body {
 table {
   width: 100%;
 }
+
 table th,
 table td {
   padding: 8px;
   text-align: left;
 }
+
 /* We shade every second (even) row of the table */
 /* We use tbody to make sure we are not shading the header - this preserves the order of the shading */
 table tbody > tr:nth-child(odd) {
@@ -44,10 +46,12 @@ table tbody > tr:nth-child(odd) {
   font-size: 16px;
   cursor: pointer;
 }
+
 /* Button on mouse hover*/
 .button:hover {
   background: #888888;
 }
+
 /* Button in active state */
 .button:active,
 .button:focus {
@@ -58,9 +62,11 @@ table tbody > tr:nth-child(odd) {
 .button-green {
   background: #33cc55;
 }
+
 .button-green:hover {
   background: #22bb44;
 }
+
 .button-green:active,
 .button-green:focus {
   background: #22aa44;
@@ -70,12 +76,28 @@ table tbody > tr:nth-child(odd) {
 .button-red {
   background: #dd3333;
 }
+
 .button-red:hover {
   background: #cc2222;
 }
+
 .button-red:active,
 .button-red:focus {
   background: #bb2222;
+}
+
+/* Blue button */
+.button-blue {
+  background: #B0E0E6;
+}
+
+.button-blue:hover {
+  background: #F0F8FF;
+}
+
+.button-blue:active,
+.button-blue:focus {
+  background: #E6E6FA;
 }
 
 /* Media Query for devices with a minimum width of 992px */
