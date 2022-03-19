@@ -8,9 +8,9 @@
       <th>Username</th>
       <th>Phone</th>
       <th>Website</th>
+      <th>Company</th>
       <th>Address</th>
       <th>Actions</th>
-      <th>Test click event in console</th>
     </tr>
     </thead>
     <tbody>
@@ -20,18 +20,31 @@
       <td><a href="mailto:john@smith.com">{{student.email}}</a></td>
       <td>{{student.username}}</td>
       <td>{{student.phone}}</td>
-      <td>{{student.website}}</td>
-      <td>{{student.address}}</td>
+      <td><a href="{{student.website}}" target="_blank">{{student.website}}</a></td>
+      <td><b>Name:</b> {{student.company.name}}<br><b>CatchPhrase: </b>{{student.company.catchPhrase}}<br><b>BS: </b>{{student.company.bs}}</td>
+      <td><b>City:</b> {{student.address.city}}<br><b>Street: </b>{{student.address.street}}<br><b>Suite: </b>{{student.address.suite}}<br><b>Zipcode: </b>{{student.address.zipcode}}<br><b>Lat: </b>{{student.address.geo.lat}}<br><b>Lon: </b>{{student.address.geo.lng}}</td>
       <td>
-        <a href="#" class="button button-green">Edit</a>
-        <button class="button button-red">Delete</button>
-      </td>
-      <td>
-        <button class="button button-blue" (click)="onClick()">Click to see the message</button>
+        <a routerLink="/edit/{{student.id}}" class="button button-green">Edit</a>
+        <button routerLink="/delete/{{student.id}}" class="button button-red" (click)="delete(student)">Delete</button>
       </td>
     </tr>
     </tbody>
   </table>
+
+  <div class="new-student">
+    <h2>Add a new student</h2>
+    <label for="name">First name and last name:</label>
+    <input type="text" id="name" #name>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" #email>
+
+    <button class="button button-green" (click)="add(name.value, email.value); name.value=''; email.value=''">
+      Add
+    </button>
+  </div>
+  <button class="button button-blue" (click)="onClick()">Click to see the message</button>
   <p *ngIf="show">The user is deleted</p>
+
 </section>
 

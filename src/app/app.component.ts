@@ -7,7 +7,7 @@ import {Student, StudentService} from "./services/student.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = '';
+  title: string = 'SDA Student Management';
 
   constructor() {
   }
